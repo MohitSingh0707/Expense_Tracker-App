@@ -21,20 +21,22 @@ const loginController = async (req, res) => {
 };
 
 // REGISTER callback
-const registerController = async(req,res) => {
+const registerController = async (req, res) => {
     try {
-        const newUser=new userModel(rew.body)
-        await newUser.save()
-        res.status(201).json({
-            success:true,
-            newUser
-        })
+      const newUser = new userModel(req.body);
+      await newUser.save();
+      res.status(201).json({
+        success: true,
+        newUser,
+      });
     } catch (error) {
-        res.status(400).json({
-            success:false,
-            error
-        })
+    
+      res.status(400).json({
+        success: false,
+        error: error.message || error, // Send detailed error message to the client
+      });
     }
-};
+  };
+  
 
 module.exports = { loginController, registerController };

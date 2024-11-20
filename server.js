@@ -17,12 +17,13 @@ const app = express();
 // Middlewares
 app.use(morgan('dev'));
 app.use(express.json()); // Fixed typo
-app.use(cors());
+app.use(cors({
+    origin: 'http://localhost:3000', // Frontend URL
+  }));
+  
 
 // Routes
-app.get("/", (req, res) => {
-    res.send("<h1>Hello from server</h1>"); // Fixed HTML syntax
-});
+app.use('/api/v1/users',require('./routes/userRoute'))
 
 // Port
 const PORT = process.env.PORT || 8080; // Correct order for default value
