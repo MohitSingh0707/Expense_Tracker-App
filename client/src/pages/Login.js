@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import '../../src/style/login.css';
 import { Form, Input, message } from 'antd';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -23,41 +24,53 @@ const Login = () => {
     }
   };
 
+  // Prevent login for already authenticated users
+  useEffect(() => {
+    if (localStorage.getItem('user')) {
+      navigate('/');
+    }
+  }, [navigate]);
+
   return (
-    <div className="register-page">
+    <div className="login-cont">
       {loading && <Spinner />}
-      <Form layout="vertical" onFinish={submitHandler}>
-        <h1>Login Form</h1>
+      <div className="signin">
+        <div className="content">
+          <h2>Login Form</h2>
 
-        {/* Email */}
-        <Form.Item
-          label="Email"
-          name="email"
-          rules={[
-            { required: true, message: 'Please enter your email!' },
-            { type: 'email', message: 'Please enter a valid email!' },
-          ]}
-        >
-          <Input type="email" />
-        </Form.Item>
+          {/* Login Form */}
+          <Form layout="vertical" onFinish={submitHandler}>
+            {/* Email */}
+            <Form.Item
+              label="Email"
+              name="email"
+              rules={[
+                { required: true, message: 'Please enter your email!' },
+                { type: 'email', message: 'Please enter a valid email!' },
+              ]}
+            >
+              <Input type="email" />
+            </Form.Item>
 
-        {/* Password */}
-        <Form.Item
-          label="Password"
-          name="password"
-          rules={[{ required: true, message: 'Please enter your password!' }]}
-        >
-          <Input.Password />
-        </Form.Item>
+            {/* Password */}
+            <Form.Item
+              label="Password"
+              name="password"
+              rules={[{ required: true, message: 'Please enter your password!' }]}
+            >
+              <Input.Password />
+            </Form.Item>
 
-        {/* Button */}
-        <div className="d-flex justify-content-between">
-          <Link to="/register">Not a user? Click here to register</Link>
-          <button className="btn btn-primary" type="submit">
-            Login
-          </button>
+            {/* Button */}
+            <div className="links">
+              <Link to="/register">Not a user? Click here to register</Link>
+              <button className="inputBx" type="submit">
+                Login
+              </button>
+            </div>
+          </Form>
         </div>
-      </Form>
+      </div>
     </div>
   );
 };

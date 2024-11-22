@@ -23,7 +23,11 @@ app.use(cors({
   
 
 // Routes
+// user routes
 app.use('/api/v1/users',require('./routes/userRoute'))
+
+// transaction routes
+app.use('api/v1/transactions',require("./routes/transactionRoutes"))
 
 // Port
 const PORT = process.env.PORT || 8080; // Correct order for default value
