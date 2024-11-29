@@ -4,12 +4,14 @@
   box-sizing: border-box;
 }
 
-.content{
-  height: 100vh; 
+ .content{
+  height: 77vh; 
+  overflow: hidden;
+  
 }
 .navbar{
   background-color:beige !important;
-}
+} 
 
 .register-page{
   display: flex;

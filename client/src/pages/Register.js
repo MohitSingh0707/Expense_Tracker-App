@@ -34,55 +34,68 @@ const Register = () => {
   
   return (
     <div className="register-page">
-      {loading && <Spinner />}
-      <Form layout="vertical" onFinish={submitHandler}>
-        <h1>Register Form</h1>
+  <div className='box'>
+    <span className='borderline'></span>
+    {loading && <Spinner />}
+    <Form className='form' layout="vertical" onFinish={submitHandler}>
+      <h1>Register Form</h1>
 
+      <div className='inputBox'>
         {/* Name */}
         <Form.Item
-          label="Name"
+          className='name'
+          label={<span>Name</span>}
           name="name"
           rules={[
             { required: true, message: 'Please enter your name!' },
             { min: 3, message: 'Name must be at least 3 characters!' },
           ]}
         >
-          <Input type="text" />
+          <input className='input' type="text" />
+          <i></i>
         </Form.Item>
+      </div>
 
+      <div className='inputBox'>
         {/* Email */}
         <Form.Item
-          label="Email"
+          label={<span>Email</span>}
           name="email"
           rules={[
             { required: true, message: 'Please enter your email!' },
             { type: 'email', message: 'Please enter a valid email!' },
           ]}
         >
-          <Input type="email" />
+          <input className='input' type="email" />
+          <i></i>
         </Form.Item>
+      </div>
 
+      <div className='inputBox'>
         {/* Password */}
         <Form.Item
-          label="Password"
+          className='pass'
+          label={<span>Password</span>}
           name="password"
           rules={[
             { required: true, message: 'Please enter your password!' },
             { min: 6, message: 'Password must be at least 6 characters!' },
           ]}
         >
-          <Input.Password />
+          <input className='input' type="password" />
+          <i></i>
         </Form.Item>
+      </div>
 
-        {/* Button */}
-        <div className="d-flex justify-content-between">
-          <Link to="/login">Already registered? Click here to login</Link>
-          <button className="btn btn-primary" type="submit">
-            Register
-          </button>
-        </div>
-      </Form>
-    </div>
+      <div className="d-flex justify-content-between">
+        <Link to="/login">Already registered? Click here to login</Link>
+        <button className="btn btn-primary" type="submit">
+          Register
+        </button>
+      </div>
+    </Form>
+  </div>
+</div>
   );
 };
 
