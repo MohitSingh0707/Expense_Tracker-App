@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import '../../src/style/login.css';
 import { Form, Input, message } from 'antd';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -32,6 +31,7 @@ const Login = () => {
   }, [navigate]);
 
   return (
+    <section>
     <div className="login-cont">
       {loading && <Spinner />}
       <div className="signin">
@@ -72,6 +72,7 @@ const Login = () => {
         </div>
       </div>
     </div>
+    </section>
   );
 };
 

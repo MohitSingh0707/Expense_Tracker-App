@@ -8,7 +8,7 @@ const connectDb = require('./config/connectDb');
 // Config dotenv file
 dotenv.config();
 
-// database call
+// Database call
 connectDb();
 
 // Rest object
@@ -19,15 +19,14 @@ app.use(morgan('dev'));
 app.use(express.json()); // Fixed typo
 app.use(cors({
     origin: 'http://localhost:3000', // Frontend URL
-  }));
-  
+}));
 
 // Routes
-// user routes
-app.use('/api/v1/users',require('./routes/userRoute'))
+// User routes
+app.use('/api/v1/users', require('./routes/userRoute'));
 
-// transaction routes
-app.use('api/v1/transactions',require("./routes/transactionRoutes"))
+// Transaction routes
+app.use('/api/v1/transactions', require('./routes/transactionRoutes')); // Fixed route path
 
 // Port
 const PORT = process.env.PORT || 8080; // Correct order for default value

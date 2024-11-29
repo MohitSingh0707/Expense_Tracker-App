@@ -5,7 +5,7 @@
 }
 
 .content{
-  height: 80vh; 
+  height: 100vh; 
 }
 .navbar{
   background-color:beige !important;
@@ -25,4 +25,21 @@
   justify-content: space-between;
   padding: 15px 20px;
   box-shadow: 0 0 3px gray;
+}
+
+/* Antd icons */
+.anticon svg{
+  font-size: 20px;
+  cursor: pointer;
+}
+.active-icon{
+  color:black
+}
+.inactive-icon{
+  color:gray
+}
+.switch-icons{
+ border: 1px solid rgb(0, 0, 0.677);
+  border-radius: 5px;
+  padding: 10px 15px;
 }
