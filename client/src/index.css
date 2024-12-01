@@ -2,16 +2,20 @@
   padding:0;
   margin: 0;
   box-sizing: border-box;
+
 }
 
  .content{
   height: 77vh; 
   overflow: hidden;
+  background: linear-gradient(to right, #4b2e2e, #1e3d53, #1c4c5a, #1e3d53, #4b2e2e)
   
 }
 .navbar{
-  background-color:beige !important;
+  background:linear-gradient(to right, #608796, #535680) !important;
+  color: gray;
 } 
+
 
 .register-page{
   display: flex;

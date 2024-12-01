@@ -6,6 +6,7 @@ import axios from 'axios';
 import Spinner from "./../components/Layout/Spinner";
 import moment from 'moment';
 import Analytics from '../components/Layout/Analytics';
+import '../../src/style/homePage.css'
 const { RangePicker } = DatePicker;
 
 

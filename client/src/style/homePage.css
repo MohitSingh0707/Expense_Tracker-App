@@ -1,0 +1,199 @@
+/* General Layout Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  
+}
+
+/* Layout */
+.filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.filters h6 {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.filters .btn {
+  transition: all 0.3s ease;
+}
+
+.filters .btn:hover {
+  background: #0056b3;
+  color: white;
+}
+
+.select-container {
+  display: flex;
+  gap: 15px;
+}
+
+/* Active and Inactive Icons */
+.active-icon {
+  color: #1890ff;
+  font-size: 20px;
+}
+
+.inactive-icon {
+  color: #ccc;
+  font-size: 20px;
+}
+
+.switch-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Table Styling */
+.ant-table {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ant-table-thead > tr > th {
+  background: #f4f4f9;
+  font-weight: bold;
+  text-align: center;
+}
+
+.ant-table-tbody > tr > td {
+  text-align: center;
+}
+
+/* Modal Styling */
+.ant-modal {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.ant-modal-header {
+  background: #1890ff;
+  color: white;
+  border-bottom: none;
+}
+
+.ant-modal-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.ant-modal-close-x {
+  color: white;
+}
+
+.ant-modal-body {
+  padding: 20px;
+  background: #fff;
+}
+
+/* Input & Button Styling */
+.ant-input,
+.ant-select-selector {
+  border-radius: 5px;
+}
+
+.ant-btn-primary {
+  background: #1890ff;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.ant-btn-primary:hover {
+  background: #0056b3;
+}
+
+/* Button Animations */
+.btn-primary {
+  background: #1890ff;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+.modal-enter {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.modal-exit {
+  animation: fadeOut 0.3s ease-out;
+}
+
+/* Spinner Styling */
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.spinner div {
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  border-radius: 50%;
+  display: inline-block;
+  background-color: #1890ff;
+  animation: bounce 1.2s infinite ease-in-out;
+}
+
+.spinner div:nth-child(2) {
+  animation-delay: -0.6s;
+}
+
+.spinner div:nth-child(3) {
+  animation-delay: -0.4s;
+}
+
+@keyframes bounce {
+  0%, 80%, 100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
+}
